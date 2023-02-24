@@ -1,10 +1,12 @@
+// Configs Server Express.
 const express = require("express");
 const app = express();
+const routes = require("./routes");
 app.use(express.json());
+app.use(routes);
 
-app.get("/", (req, res) => {
-  res.json({ name: "Alguem" });
-});
+// Configs DATABASE - MongoDB.
+require("./config/dbConfig");
 
 app.listen(3030, () => {
   console.log("servidor rodando.");
