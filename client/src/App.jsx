@@ -1,10 +1,11 @@
-import "./App.css";
+import "./global.css";
+import "./sidebar.css";
 
 function App() {
   return (
     <div className="App">
       <aside>
-        <h1>Notes</h1>
+        <h1>New Note</h1>
         <form action="">
           <div className="input-block">
             <label htmlFor="title">Title</label>
