@@ -2,13 +2,20 @@ import React, { useState } from "react";
 import CardNote from "./components/CardNote";
 import "./global.css";
 import "./sidebar.css";
+import api from "./services/api";
 
 function App() {
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const response = await api.post("/notes", {
+      title,
+      note,
+      priority: false,
+    });
   };
 
   return (
@@ -18,11 +25,19 @@ function App() {
         <form onSubmit={handleSubmit}>
           <div className="input-block">
             <label htmlFor="title">Title</label>
-            <input type="text" value={title} />
+            <input
+              type="text"
+              onChange={(e) => setTitle(e.target.value)}
+              value={title}
+            />
           </div>
           <div className="input-block">
             <label htmlFor="note">Note</label>
-            <textarea required value={note} />
+            <textarea
+              required
+              onChange={(e) => setNote(e.target.value)}
+              value={note}
+            />
           </div>
           <button type="submit">Save</button>
         </form>
