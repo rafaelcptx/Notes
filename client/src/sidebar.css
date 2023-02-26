@@ -1,31 +1,32 @@
-aside {
+.aside {
   width: 320px;
-  margin-bottom: 30px;
   box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   padding: 30px 20px;
-  position: fixed;
   background-color: white;
+  height: 500px;
+  position: sticky;
+  top: 40px;
 }
 
-aside h1 {
+.aside h1 {
   text-align: center;
   display: block;
-  color: #333;
+  color: #d00000;
 }
 
-aside form {
+.aside form {
   margin-top: 10px;
 }
 
-aside form .input-block label {
+.aside form .input-block label {
   color: grey;
   font-size: 14px;
   display: block;
   margin-top: 20px;
 }
 
-aside form .input-block input,
+.aside form .input-block input,
 textarea {
   width: 100%;
   padding: 10px;
@@ -33,16 +34,16 @@ textarea {
   border-bottom: 1px solid grey;
 }
 
-aside form .input-block textarea {
+.aside form .input-block textarea {
   height: 200px;
   resize: none;
 }
 
-aside form button[type="submit"] {
+.aside form button[type="submit"] {
   width: 100%;
   border: 0;
   margin-top: 20px;
-  background-color: grey;
+  background-color: #d00000;
   color: white;
   padding: 10px;
   border-radius: 10px;
@@ -50,6 +51,14 @@ aside form button[type="submit"] {
   transition: 0.2s;
 }
 
-aside form button[type="submit"]:hover {
-  background-color: rgb(70, 70, 70);
+.aside form button[type="submit"]:hover {
+  background-color: #970000;
+}
+
+/* RESPONSIVE MOBILE MODE */
+@media (max-width: 780px) {
+  .aside {
+    margin: auto;
+    position: relative;
+  }
 }
