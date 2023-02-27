@@ -1,9 +1,11 @@
 import React from "react";
+import "./style-priority.css";
+import "./style.css";
 
 const CardNote = ({ data }) => {
   return (
     <>
-      <li className="cardNote">
+      <li className={data.priority ? "priorityCardNote" : "cardNote"}>
         <div>
           <strong>{data.title}</strong>
           <div>Delete</div>

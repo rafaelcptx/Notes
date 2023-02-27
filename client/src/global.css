@@ -24,50 +24,6 @@ body,
   flex-direction: row;
 }
 
-main ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  list-style: none;
-}
-
-li.cardNote div {
-  display: flex;
-  justify-content: space-between;
-}
-
-li.cardNote {
-  width: 300px;
-  background-color: white;
-  padding: 15px;
-  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-}
-
-li.cardNote textarea {
-  width: 100%;
-  height: 130px;
-  padding: 10px;
-  resize: none;
-}
-
-li.cardNote div div {
-  color: #d00000;
-}
-
-li.cardNote div div:hover {
-  cursor: pointer;
-  color: #970000;
-}
-
-li.cardNote span {
-  color: #d00000;
-}
-
-li.cardNote span:hover {
-  cursor: pointer;
-  color: #970000;
-}
 @media (max-width: 1050px) {
   main ul {
     grid-template-columns: 1fr;

@@ -16,17 +16,17 @@ export default function RowRadioButtonsGroup() {
       >
         <FormControlLabel
           value="all"
-          control={<Radio color="" />}
+          control={<Radio color="default" />}
           label="All"
         />
         <FormControlLabel
           value="priority"
-          control={<Radio color="" />}
+          control={<Radio color="default" />}
           label="Priority"
         />
         <FormControlLabel
           value="normal"
-          control={<Radio color="" />}
+          control={<Radio color="default" />}
           label="Normal"
         />
       </RadioGroup>

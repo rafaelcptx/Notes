@@ -31,7 +31,7 @@ function App() {
 
     setAllNotes([...allNotes, response.data]);
 
-    alert(`Note "${title}" succesfully created!`);
+    alert(`Note: "${title}" succesfully created!`);
 
     setTitle("");
     setNote("");
@@ -45,6 +45,7 @@ function App() {
           <div className="input-block">
             <label htmlFor="title">Title</label>
             <input
+              maxLength={20}
               type="text"
               required
               onChange={(e) => setTitle(e.target.value)}
