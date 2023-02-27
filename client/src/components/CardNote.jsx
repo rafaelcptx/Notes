@@ -1,17 +1,14 @@
 import React from "react";
 
-const CardNote = () => {
+const CardNote = ({ data }) => {
   return (
     <>
       <li className="cardNote">
         <div>
-          <strong>Titulo Nota</strong>
+          <strong>{data.title}</strong>
           <div>Delete</div>
         </div>
-        <textarea
-          readOnly
-          defaultValue="Anotaçao em si abcde lorem ipslum compra compra vendfe vende abcde"
-        ></textarea>
+        <textarea readOnly defaultValue={data.note}></textarea>
         <span>• Important!</span>
       </li>
     </>

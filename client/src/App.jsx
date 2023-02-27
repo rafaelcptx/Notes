@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CardNote from "./components/CardNote";
 import "./global.css";
 import "./sidebar.css";
@@ -7,6 +7,17 @@ import api from "./services/api";
 function App() {
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("");
+  const [allNotes, setAllNotes] = useState([]);
+
+  useEffect(() => {
+    const getNotes = async () => {
+      const response = await api.get("/notes");
+
+      setAllNotes(response.data);
+    };
+
+    getNotes();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,6 +27,13 @@ function App() {
       note,
       priority: false,
     });
+
+    setAllNotes([...allNotes, response.data]);
+
+    alert(`Note "${title}" succesfully created!`);
+
+    setTitle("");
+    setNote("");
   };
 
   return (
@@ -27,6 +45,7 @@ function App() {
             <label htmlFor="title">Title</label>
             <input
               type="text"
+              required
               onChange={(e) => setTitle(e.target.value)}
               value={title}
             />
@@ -44,13 +63,9 @@ function App() {
       </div>
       <main>
         <ul>
-          <CardNote />
-          <CardNote />
-          <CardNote />
-          <CardNote />
-          <CardNote />
-          <CardNote />
-          <CardNote />
+          {allNotes.map((data) => (
+            <CardNote data={data} />
+          ))}
         </ul>
       </main>
     </div>
