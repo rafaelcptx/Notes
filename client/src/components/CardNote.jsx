@@ -10,7 +10,7 @@ const CardNote = ({ data }) => {
           <strong>{data.title}</strong>
           <div>Delete</div>
         </div>
-        <textarea readOnly defaultValue={data.note}></textarea>
+        <textarea readOnly defaultValue={data.note} />
         <span>• Important!</span>
       </li>
     </>
