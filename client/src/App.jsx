@@ -3,6 +3,7 @@ import CardNote from "./components/CardNote";
 import "./global.css";
 import "./sidebar.css";
 import api from "./services/api";
+import RadioButton from "./components/RadioButton/RadioButton";
 
 function App() {
   const [title, setTitle] = useState("");
@@ -17,7 +18,7 @@ function App() {
     };
 
     getNotes();
-  }, []);
+  }, [allNotes]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -60,6 +61,7 @@ function App() {
           </div>
           <button type="submit">Save</button>
         </form>
+        <RadioButton />
       </div>
       <main>
         <ul>

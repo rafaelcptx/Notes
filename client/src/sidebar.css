@@ -4,19 +4,20 @@
   border-radius: 10px;
   padding: 30px 20px;
   background-color: white;
-  height: 500px;
+  height: 520px;
   position: sticky;
   top: 40px;
 }
 
 .aside h1 {
+  font-size: 25px;
   text-align: center;
   display: block;
   color: #d00000;
 }
 
 .aside form {
-  margin-top: 10px;
+  margin: 10px 0px;
 }
 
 .aside form .input-block label {
