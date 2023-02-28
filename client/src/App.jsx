@@ -3,7 +3,6 @@ import CardNote from "./components/CardNote";
 import "./global.css";
 import "./sidebar.css";
 import api from "./services/api";
-import RadioButton from "./components/RadioButton/RadioButton";
 
 function App() {
   const [title, setTitle] = useState("");
@@ -62,12 +61,11 @@ function App() {
           </div>
           <button type="submit">Save</button>
         </form>
-        <RadioButton />
       </div>
       <main>
         <ul>
           {allNotes.map((data) => (
-            <CardNote data={data} />
+            <CardNote data={data} key={data._id} />
           ))}
         </ul>
       </main>
