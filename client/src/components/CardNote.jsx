@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./style-priority.css";
 import "./style.css";
 import api from "../services/api";
+import { RiErrorWarningLine } from "react-icons/ri";
+import { FaTrash } from "react-icons/fa";
 
 const CardNote = ({ data }) => {
   const [changedNote, setChangedNote] = useState("");
@@ -31,14 +33,18 @@ const CardNote = ({ data }) => {
       <li className={data.priority ? "priorityCardNote" : "cardNote"}>
         <div>
           <strong>{data.title}</strong>
-          <div onClick={handleDelete}>Delete</div>
+          <div>
+            <FaTrash onClick={handleDelete} />
+          </div>
         </div>
         <textarea
           onChange={(e) => setChangedNote(e.target.value)}
           onBlur={(e) => handleEdit(e.target.value, data.note)}
           defaultValue={data.note}
         />
-        <span onClick={handlePriority}>• Important!</span>
+        <span>
+          <RiErrorWarningLine onClick={handlePriority} size="20" />
+        </span>
       </li>
     </>
   );
